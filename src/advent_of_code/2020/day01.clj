@@ -10,9 +10,7 @@
   (->> "resources/2020/day01.txt"
        (slurp)
        (split-nums)
-       (map #(Integer/parseInt %))))
-
-(map #(Long/parseLong ^String %) input)
+       (map #(Long/parseLong %))))
 
 (defn make-groups [group-size entries]
   (combo/combinations entries group-size))
@@ -29,7 +27,10 @@
        (find-group total)
        (apply *)))
 
-;; part 1
-; (do-it input 2020 2)
-;; part 2
-; (do-it input 2020 3)
+(comment
+  ;; part 1
+  (do-it input 2020 2)
+
+  ;; part 2
+  (do-it input 2020 3))
+
