@@ -18,8 +18,8 @@
   (if (= 1 (count nums))
     (first nums)
     (if (#{\F \L} (first steps))
-      (find-pos (take (/ (count nums) 2) nums) (rest steps))
-      (find-pos (drop (/ (count nums) 2) nums) (rest steps)))))
+      (recur (take (/ (count nums) 2) nums) (rest steps))
+      (recur (drop (/ (count nums) 2) nums) (rest steps)))))
 
 (defn find-seat-id [rows cols pass]
   (let [row (find-pos rows (take 7 pass))
